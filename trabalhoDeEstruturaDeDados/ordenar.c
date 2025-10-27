@@ -81,7 +81,7 @@ int *criarVetorEsp2(int *vetorCresc, int *vetorDecre){
         novoVetor[i] = vetorCresc[c];
         c--;
     }
-    c = TAM/2 - 1;
+    c = TAM/2;
     for(int i = TAM/2; i < TAM; i++){
         novoVetor[i] = vetorDecre[c];
         c--;
