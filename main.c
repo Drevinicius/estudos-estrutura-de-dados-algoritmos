@@ -27,7 +27,9 @@ int main(void) {
 	fim = clock();													// Pega o horário final
 	tempo2 = (double)(fim - inicio)/ CLOCKS_PER_SEC;				// Calcula o tempo de execução
 
-	vetorDecr = inverterVetor(vetor);								// Chama a função para inverter o vetor
+	vetorDecr = inverterVetor(vetor);								// Chama a função para inverter o vetor e criar os vetores especiais
+	vetorEspecial1 = criarVetorEsp1(vetor, vetorDecr);				// Cria vetor crescente até a metade e decrescente na outra metade
+	vetorEspecial2 = criarVetorEsp2(vetor, vetorDecr);				// Cria vetor decrescente até a metade e crescente na outra metade
 	
 	printf("\t> Ordernar array decrescente\n");
 	exibir(vetorDecr);												// Exibe o vetor decrescente
@@ -36,18 +38,12 @@ int main(void) {
 	fim = clock();													// Pega o horário final
 	tempo3 = (double)(fim - inicio)/ CLOCKS_PER_SEC;				// Calcula o tempo de execução
 	
-	vetorDecr = inverterVetor(vetor);								// Inverte o vetor para criar os vetores especiais
-	vetorEspecial1 = criarVetorEsp1(vetor, vetorDecr);				// Cria vetor crescente até a metade e decrescente na outra metade
-	
 	printf("\t> Ordernar array primeira metade cresc. e segunda metade decre.:\n");
 	exibir(vetorEspecial1);											// Exibe o vetor especial 1
 	inicio = clock();												// Pega o horário inicial
 	selectionSort(vetorEspecial1);									// Ordena o vetor especial 1
 	fim = clock();													// Pega o horário final	
 	tempo4 = (double)(fim - inicio)/ CLOCKS_PER_SEC;				// Calcula o tempo de execução
-
-	vetorDecr = inverterVetor(vetor);								// Inverte o vetor para criar o segundo vetor especial
-	vetorEspecial2 = criarVetorEsp2(vetor, vetorDecr);				// Cria vetor decrescente até a metade e crescente na outra metade
 
 	printf("\t> Ordernar array primeira metade decre. e segunda metade cresc.:\n");
 	exibir(vetorEspecial2);											// Exibe o vetor especial 2
